@@ -16,4 +16,8 @@ export default {
 }
 </script>
 
-<style lang="less"></style>
+<style lang="less">
+h1 {
+  font-size: 22px;
+}
+</style>
