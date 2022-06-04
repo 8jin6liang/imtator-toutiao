@@ -3,7 +3,7 @@
 import axios from 'axios'
 
 const request = axios.create({
-  baseURL: 'http://ttapi.research.itcast.cn'
+  baseURL: 'http://127.0.0.1/api'
 })
 
 // 请求拦截器
