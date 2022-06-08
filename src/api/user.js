@@ -8,4 +8,14 @@ const login = (data) => {
   })
 }
 
-export { login }
+const getUserInfo = (tokenInfo) => {
+  return request({
+    method: 'GET',
+    url: '/app/v1_0/user'
+    // headers: {
+    //   Authorization: `Bearer ${tokenInfo}`
+    // }
+  })
+}
+
+export { login, getUserInfo }

@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <van-nav-bar title="标题" />
+    <van-nav-bar title="标题" left-text="返回" left-arrow @click-left="goBack" />
     <van-form ref="loginForm" @submit="onSubmit">
       <van-field name="手机号" placeholder="手机号" v-model="user.mobile"
         type="number" maxlength="11" :rules="userFormRules.mobile">
@@ -56,8 +56,8 @@ export default {
       try {
         const { data } = await login(this.user)
         this.$store.commit('setUser', data.data)
-        console.log('成功信息', data)
         this.$toast.success('登录成功')
+        this.$router.back()
       } catch (err) {
         console.log('失败信息', err)
         if (err.response.status === 400) {
@@ -68,17 +68,25 @@ export default {
       }
     },
     onSendCode () {
-      console.log(this)
       this.$refs.loginForm.validate('手机号')
+    },
+    goBack () {
+      this.$router.back()
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-.van-nav-bar {
+/deep/.van-nav-bar {
   background-color: rgb(42, 148, 255);
-  /deep/.van-nav-bar__title {
+  .van-nav-bar__left {
+    .van-icon,
+    .van-nav-bar__text {
+      color: #fff;
+    }
+  }
+  .van-nav-bar__title {
     color: #fff;
   }
 }
@@ -99,5 +107,8 @@ export default {
     border-radius: 4px;
     border: none;
   }
+}
+.iconfont {
+  font-size: 18px;
 }
 </style>
