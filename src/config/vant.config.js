@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Button, NavBar, Form, Field, Toast, Tabbar, TabbarItem, Image, Grid, GridItem, CellGroup, Cell, Dialog } from 'vant'
+import { Button, NavBar, Form, Field, Toast, Tabbar, TabbarItem, Image, Grid, GridItem, CellGroup, Cell, Dialog, Tab, Tabs } from 'vant'
 
 Vue.use(Button)
 Vue.use(NavBar)
@@ -14,3 +14,5 @@ Vue.use(GridItem)
 Vue.use(CellGroup)
 Vue.use(Cell)
 Vue.use(Dialog)
+Vue.use(Tab)
+Vue.use(Tabs)
